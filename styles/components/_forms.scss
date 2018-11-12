@@ -1,0 +1,158 @@
+/***** Forms *****/
+
+.form {
+  max-width: 650px;
+}
+
+.form-field ~ .form-field {
+  margin-top: 25px;
+}
+
+.form-field label {
+  display: block;
+  font-size: $font-size-small;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-field input {
+  //border: 1px solid $border-color;
+  background-color: #efefef;
+  border-radius: 6px;
+  padding: 15px;
+  width: 100%;
+  border: 2px solid transparent;
+
+  &:focus {
+    border-color: $brand_color;
+    background-color: $color-white;
+  }
+}
+
+.form-field input[type="text"] {
+  border: 2px solid transparent;
+  border-radius: 6px;
+  background-color: #efefef;
+  transition: all 0.15s ease-in-out;
+
+  &:focus {
+    border-color: $brand_color;
+    background-color: $color-white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  }
+}
+
+.form-field input[type="checkbox"] {
+  width: auto;
+}
+
+// Select box
+.form-field .nesty-input {
+  border-radius: 6px;
+  height: 46px;
+  line-height: 46px;
+  outline: none;
+  vertical-align: middle;
+
+  &:focus {
+    border: 2px solid $brand_color;
+    text-decoration: none;
+  }
+}
+
+.form-field .hc-multiselect-toggle:focus {
+  outline: none;
+  border: 2px solid $brand_color;
+  text-decoration: none;
+}
+
+.form-field textarea {
+  vertical-align: middle;
+  border: 2px solid transparent;
+  background-color: #efefef;
+  transition: all 0.15s ease-in-out;
+  border-radius: 6px;
+  padding: 15px;
+  width: 100%;
+
+  &:focus {
+    border-color: $brand_color;
+    background-color: $color-white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  }
+}
+
+.form-field input[type="checkbox"] + label {
+  margin: 0 0 0 10px;
+}
+
+.form-field.required > label::after {
+  content: "*";
+  color: #f00;
+  margin-left: 2px;
+}
+
+.form-field .optional {
+  color: $secondary-text-color;
+  margin-left: 4px;
+}
+
+.form-field p {
+  color: $secondary-text-color;
+  font-size: 12px;
+  margin: 5px 0;
+}
+
+[data-loading="true"] input,
+[data-loading="true"] textarea {
+  background: transparent url($assets-loader-gif) 99% 50% no-repeat;
+  background-size: 16px 16px;
+}
+
+.form footer {
+  margin-top: 40px;
+  padding-top: 30px;
+}
+
+.form footer a {
+  color: $secondary-text-color;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.form .suggestion-list {
+  font-size: $font-size-small;
+  margin-top: 30px;
+
+  label {
+    border-bottom: 1px solid $border-color;
+    display: block;
+    padding-bottom: 5px;
+  }
+
+  li {
+    padding: 10px 0;
+
+    a:visited { color: $visited-link-color; }
+  }
+}
+
+.new-request-form {
+  @include breakpoint(900px) {
+    @include column(8);
+  }
+
+  @include breakpoint(1150px) {
+    @include column(6);
+  }
+}
+
+.notification-inline.notification-error {
+  padding: 15px;
+  background-color: #FFE7E7;
+  color: #B60202;
+  border-color: transparent;
+  border-radius: 6px;
+  font-weight: bold;
+  font-family: inherit;
+}

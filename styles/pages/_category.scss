@@ -1,0 +1,151 @@
+/***** Category pages *****/
+.page-header {
+  padding-top: 50px;
+  position: relative;
+
+  &::after {
+    @include title-face;
+    content: attr(data-name);
+    position: absolute;
+    top: -0.45em;
+    left: 0;
+    font-size: 17em;
+    color: #f8f8f8;
+    z-index: -1;
+    white-space: nowrap;
+    font-weight: normal;
+  }
+
+  .bubble-1 {
+    @include circle($color-yellow, 25px);
+    position: absolute;
+    top: 100%;
+    right: 120px;
+  }
+
+  .bubble-2 {
+    @include circle($color-red, 15px);
+    position: absolute;
+    top: 20%;
+    right: 50%;
+  }
+
+  .bubble-3 {
+    @include circle($color-blue, 20px);
+    position: absolute;
+    top: -10%;
+    right: 20%;
+  }
+}
+
+.category-name {
+  padding-bottom: 50px;
+
+  @include breakpoint(600px) {
+    @include column(8);
+    padding-bottom: 50px;
+  }
+
+  @include breakpoint(800px) {
+    @include column(5);
+    padding-bottom: 50px;
+  }
+}
+
+.page-name {
+  padding-bottom: 50px;
+}
+
+.category__title {
+
+}
+
+
+
+.section-tree {
+  @include tablet { flex-direction: row; }
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  clear: both;
+
+  .section,
+  .grid-sizer {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    width: 100%;
+
+    @include breakpoint(800px) {
+      @include column(5);
+    }
+
+    @include breakpoint(1050px) {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    &:nth-child(2n + 2) {
+      @include breakpoint(800px) {
+        @include column(5);
+        @include last;
+      }
+    }
+  }
+
+  &-title {
+    margin-bottom: 0;
+
+    a {
+      color: $text_color;
+      text-decoration: none;
+
+      &:hover {
+        color: $text-color;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .see-all-articles {
+    display: inline-block;
+    padding: 20px 0;
+    color: $text_color_light;
+
+    &:hover {
+      color: $brand_color;
+    }
+  }
+}
+
+.gutter-sizer {
+  width: 10%;
+}
+
+.article-list {
+  &-item {
+
+
+    .icon-lock::before {
+      vertical-align: baseline;
+    }
+  }
+}
+
+.article-list-link {
+  padding: 20px 0;
+  border-bottom: 1px solid $border-color-light;
+  display: block;
+  color: $text_color;
+  text-decoration: none;
+
+  &:hover {
+    color: $brand_color;
+    text-decoration: underline;
+  }
+}
+
+.icon-star::before {
+  color: $brand_color;
+  font-size: 18px;
+}

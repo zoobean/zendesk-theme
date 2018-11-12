@@ -1,0 +1,28 @@
+/***** Search field *****/
+.search {
+  position: relative;
+
+  input[type="search"] {
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: $field-text-color;
+    height: 56px;
+    padding-left: 50px;
+    padding-right: 30px;
+    -webkit-appearance: none;
+    width: 100%;
+    box-shadow: 0 9px 34px rgba(0,0,0,0.08);
+    font-size: 1em;
+    transition: border 0.15s ease-in-out;
+
+    &:focus {
+      border: 2px solid $brand_color;
+      color: $field-text-focus-color;
+    }
+  }
+
+  &-full input[type="search"] {
+    border: 1px solid $color-white;
+  }
+}

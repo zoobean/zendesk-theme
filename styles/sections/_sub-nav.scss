@@ -1,0 +1,28 @@
+.sub-nav {
+  @include tablet {
+    align-items: baseline;
+    flex-direction: row;
+  }
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  //padding-bottom: px;
+
+  //Inner pages search field
+  input[type="search"] {
+    @include tablet {
+      min-width: 300px;
+    }
+
+    &::after { font-size: $font-size-base; }
+  }
+}
+
+.sub-nav--article {
+  @include breakpoint(900px) {
+    @include column(6);
+    @include prepend(4);
+  }
+}

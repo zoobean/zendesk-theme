@@ -1,36 +1,45 @@
-<div class="container-divider"></div>
-<div class="container">
-  <nav class="sub-nav">
+<nav class="sub-nav">
+  <div class="container">
     {{breadcrumbs}}
-    {{search submit=false}}
-  </nav>
+  </div>
+</nav>
 
-  <div class="section-container">
-    <section class="section-content">
-      <header class="page-header">
-        <h1>
-          {{section.name}}
-        </h1>
-        {{#if settings.show_follow_section}}
-          {{subscribe}}
-        {{/if}}
-        {{#if section.description}}
-          <p class="page-header-description">{{section.description}}</p>
-        {{/if}}
-      </header>
+<div class="section-container">
+  <section class="section-content">
+    <header data-name="{{ section.name }}" class="page-header">
+      <div class="container">
+        <div class="section-name">
+          <h1>
+            {{section.name}}
+          </h1>
+          {{#if section.description}}
+            <p class="page-header-description">{{section.description}}</p>
+          {{/if}}
+        </div>
+      </div>
 
+      <div class="bubble-1 rellax" data-rellax-speed="7"></div>
+      <div class="bubble-2 rellax" data-rellax-speed="5"></div>
+      <div class="bubble-3 rellax" data-rellax-speed="2"></div>
+    </header>
 
+    <div class="container clearfix">
       {{#if section.articles}}
         <ul class="article-list">
           {{#each section.articles}}
             <li class="article-list-item {{#if promoted}} article-promoted{{/if}}">
-              {{#if promoted}}
-                <span data-title="{{t 'promoted'}}" class="icon-star"></span>
-              {{/if}}
-              <a href="{{url}}" class="article-list-link">{{title}}</a>
-              {{#if internal}}
-                <span class="icon-lock" title="{{t 'internal'}}"></span>
-              {{/if}}
+
+              <a href="{{url}}" class="article-list-link">
+                {{#if promoted}}
+                  <span data-title="{{t 'promoted'}}" class="icon-star"></span>
+                {{/if}}
+
+                {{title}}
+
+                {{#if internal}}
+                  <span class="icon-lock" title="{{t 'internal'}}"></span>
+                {{/if}}
+              </a>
             </li>
           {{/each}}
         </ul>
@@ -41,6 +50,22 @@
       {{/if}}
 
       {{pagination}}
-    </section>
+    </div>
+  </section>
+</div>
+
+<div class="billboard billboard--left">
+  <div class="container">
+    <div class="billboard__illustration">
+      <img src="{{asset 'find-help.png'}}" alt="">
+    </div>
+
+    <div class="billboard__content">
+      <h2 class="billboard__heading">{{ settings.contact_support_heading }}</h2>
+      <p class="billboard__description">{{ settings.contact_support_paragraph }}</p>
+      <div class="billboard__button">
+        <a class="button" role="button" href="{{ settings.contact_support_button_destination }}">{{ settings.contact_support_button_text }}</a>
+      </div>
+    </div>
   </div>
 </div>

@@ -1,22 +1,37 @@
-<div class="container-divider"></div>
-<div class="container">
-  <nav class="sub-nav">
+<nav class="sub-nav">
+  <div class="container">
     {{breadcrumbs}}
-    {{search submit=false}}
-  </nav>
+  </div>
+</nav>
 
-  <h1>
-    {{t 'submit_a_request'}}
-    {{#if follow_up}}
-      <span class="follow-up-hint">
-        {{follow_up}}
-      </span>
-    {{/if}}
-  </h1>
-
-  <div class="form">
-    {{request_form}}
+<header data-name="{{ t 'submit_a_request' }}" class="page-header">
+  <div class="container">
+    <div class="page-name">
+      <h1>
+        {{t 'submit_a_request'}}
+        {{#if follow_up}}
+          <span class="follow-up-hint">
+            {{follow_up}}
+          </span>
+        {{/if}}
+      </h1>
+      </div>
   </div>
 
-  {{chat}}
+  <div class="bubble-1 rellax" data-rellax-speed="7"></div>
+  <div class="bubble-2 rellax" data-rellax-speed="5"></div>
+  <div class="bubble-3 rellax" data-rellax-speed="2"></div>
+</header>
+
+<div class="container">
+  <div class="new-request-form">
+
+
+
+    <div class="form">
+      {{request_form}}
+    </div>
+
+    {{chat}}
+  </div>
 </div>

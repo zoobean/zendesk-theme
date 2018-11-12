@@ -1,0 +1,378 @@
+/***** Article *****/
+.article-container {
+  clear: both;
+
+  @include breakpoint(900px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.article {
+  @include breakpoint(900px) {
+    @include column(8);
+    @include last;
+    order: 2;
+  }
+
+  @include breakpoint(1150px) {
+    @include column(7);
+    @include last;
+    order: 2;
+  }
+
+  &-header {
+    @include tablet {
+      flex-direction: row;
+      margin-top: 0;
+    }
+
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 0;
+    margin-top: 20px;
+  }
+
+  &-title {
+    @include tablet {
+      flex-basis: 100%; /* Take entire row */
+    }
+
+    .icon-lock::before {
+      content: "\1F512";
+      font-size: 20px;
+      position: relative;
+      left: -5px;
+      vertical-align: baseline;
+    }
+  }
+
+  [role="button"] {
+    @include tablet { width: auto; }
+    flex-shrink: 0; /*Avoid collapsing elements in Safari (https://github.com/philipwalton/flexbugs#1-minimum-content-sizing-of-flex-items-not-honored)*/
+    width: 100%;
+  }
+
+  &-info {
+    max-width: 100%;
+  }
+
+  &-content {
+    line-height: 1.6;
+    margin: 10px 0 50px;
+    word-wrap: break-word;
+  }
+
+  &-comment-count {
+    color: $secondary-text-color;
+    font-weight: $font-weight-light;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    .icon-comments {
+      color: $brand_color;
+      content: "\1F4AC";
+      display: inline-block;
+      font-size: 18px;
+      padding: 5px;
+    }
+  }
+
+  &-more-questions {
+    margin: 10px 0 20px;
+    text-align: center;
+  }
+
+  &-return-to-top {
+    @include desktop { display: none; }
+
+    border-top: 1px solid $border-color;
+
+    a {
+      color: $text_color;
+      display: block;
+      padding: 20px 0;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+
+    .icon-arrow-up::before {
+      font-size: 16px;
+      margin-left: 5px;
+
+      [dir="rtl"] & {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &-unsubscribe {
+    background-color: $button-color;
+    color: $brand_text_color;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $hover-button-color;
+      border-color: $hover-button-color;
+    }
+  }
+}
+
+.article-body {
+  @include content-body;
+  > p:last-child { margin-bottom: 0; }
+
+  img {
+    border-radius: 6px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    @include breakpoint(900px) {
+      max-width: calc(100% + (#{$column_width} * 2) + (#{$gutter_width} * 4));
+    }
+
+  }
+}
+
+.article-relatives {
+  border-top: 1px solid $border-color-darker;
+  display: flex;
+  padding: 20px 0;
+  clear: both;
+  order: 3;
+  width: 100%;
+}
+
+.article-author {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 25px;
+}
+
+.article-avatar {
+  margin-right: 15px;
+}
+
+.article-vote {
+  color: $color-white;
+  margin: 10px 5px;
+  min-width: 90px;
+  width: auto;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  background-color: $brand_color;
+
+  &::before {
+    content: "";
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    display: inline-flex;
+    position: relative;
+
+    [dir="rtl"] & {
+      margin-right: 0;
+      margin-left: 10px;
+    }
+  }
+
+  &::after {
+    content: attr(title); /* Yes/No label*/
+  }
+
+  &:focus,
+  &:active {
+    background-color: $brand_color;
+    color: $color-white;
+  }
+
+  &:hover {
+    background-color: $brand_color;
+  }
+
+  &:hover::before,
+  &:hover::after,
+  &[aria-selected="true"]::before,
+  &[aria-selected="true"]::after {
+    color: $brand_text_color;
+  }
+}
+
+.article-votes {
+  border-top: 1px solid $border-color;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.article-vote-up::before {
+  background-image: url($assets-yes-svg);
+}
+
+.article-vote-down::before {
+  background-image: url($assets-no-svg);
+}
+
+.article-meta {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+
+  .meta-group {
+    margin-top: 5px;
+  }
+}
+
+.article-sidebar {
+  border-bottom: 1px solid $border-color;
+  border-top: 1px solid $border-color;
+  margin-bottom: 40px;
+  padding: 0;
+
+  @include breakpoint(900px) {
+    @include column(3);
+    @include append(1);
+    border: none;
+    order: 1;
+    margin-top: 14px;
+    margin-bottom: 0;
+  }
+
+  .section-articles {
+    @include breakpoint(900px) {
+      overflow: visible;
+    }
+  }
+}
+
+.sidenav-title {
+  font-size: 1rem;
+  font-weight: normal;
+
+  @include breakpoint(900px) {
+    @include title-face;
+    font-weight: normal;
+    position: relative;
+    color: $text_color;
+    font-size: 19.2px;
+  }
+
+  //text-transform: uppercase;
+  //letter-spacing: 1px;
+}
+
+.sidenav-item {
+  color: $text_color;
+  display: block;
+  text-decoration: none;
+  padding: 15px 0;
+  border-bottom: 1px solid $border-color-light;
+  font-size: 14.5px;
+
+  &:hover {
+    color: $brand_color;
+    text-decoration: underline;
+  }
+
+  &::after {
+    content: none;
+  }
+
+  &.current-article {
+    color: $brand_color;
+    padding-left: 0px;
+    border-radius: 10px;
+    position: relative;
+    font-weight: bold;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background-color: $brand_color;
+      box-shadow: 0 3px 10px rgba(56, 89, 201, 0.3);
+      top: 50%;
+      margin-top: -2.5px;
+      left: -35px;
+      border-radius: 15px;
+      z-index: 500;
+    }
+
+  }
+}
+
+.collapsible-sidebar {
+  .sidenav__item-group li:last-of-type {
+    a {
+      border-bottom: none;
+    }
+  }
+}
+
+.see-more {
+  display: block;
+  padding: 15px 0;
+  color: $text_color_light;
+
+  &:hover {
+    color: $brand_color;
+  }
+}
+
+.sidenav__item-group {
+  position: relative;
+}
+
+.recent-articles,
+.related-articles {
+  h3 {
+    margin: 20px 0;
+    font-size: 1em;
+    color: $text_color_light;
+  }
+
+  li {
+    margin-bottom: 20px;
+
+    @include breakpoint(900px) {
+      @include column(6);
+      @include last-col2;
+      margin-bottom: 0;
+    }
+
+    &:nth-child(n + 3) {
+      display: none;
+    }
+  }
+
+  a {
+    @include title-face;
+    color: $text_color;
+    text-decoration: none;
+    font-size: 1.44em;
+    line-height: 1.25;
+    padding-right: 30px;
+    font-weight: normal;
+
+    &:hover {
+      color: $brand_color;
+      text-decoration: underline;
+    }
+
+    @include breakpoint(1050px) {
+      font-size: 1.728em;
+    }
+  }
+}

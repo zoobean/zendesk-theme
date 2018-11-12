@@ -1,0 +1,49 @@
+/* Sidebar navigation that collapses on mobile */
+.collapsible-sidebar {
+  @include breakpoint(900px) {
+    max-height: none;
+    padding: 0;
+  }
+  flex: 1;
+  max-height: 45px;
+  overflow: hidden;
+  padding: 10px 0;
+  position: relative;
+
+  &[aria-expanded="true"] {
+    max-height: none;
+
+    .collapsible-sidebar-title::after {
+      @include breakpoint(900px) { display: none; }
+      background-image: url($assets-close-svg);
+    }
+  }
+
+
+}
+
+.collapsible-sidebar-title {
+  margin-top: 0;
+
+    &::after {
+    @extend .icon;
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 14px;
+    width: 20px;
+    height: 20px;
+    background-image: url($assets-open-svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include breakpoint(900px) {
+      display: none;
+    }
+
+    [dir="rtl"] & {
+      left: 10px;
+      right: auto;
+    }
+  }
+}

@@ -1,0 +1,311 @@
+/***** Header *****/
+$header-height: 371px;
+
+.header {
+  position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $secondary_background_color;
+  background-repeat: no-repeat;
+  margin-bottom: 40px + 80px;
+  padding-top: 40px;
+
+  @include breakpoint(850px) {
+    padding: 80px 0;
+    margin-bottom: 40px + 60px;
+  }
+
+  @include breakpoint(1150px) {
+    padding: 80px 0 100px;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  &::after {
+    @include breakpoint(850px) {
+      content: "";
+      position: absolute;
+      @include circle($color-yellow, 70px);
+      top: 20%;
+      left: 40%;
+    }
+
+    @include breakpoint(1050px) {
+      @include circle($color-yellow, 100px);
+      top: 25%;
+      left: 35%;
+    }
+  }
+}
+
+.header__blobs {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+
+  &::after {
+    @include breakpoint(850px) {
+      content: "";
+      position: absolute;
+      @include circle($color-yellow, 100px);
+      bottom: -50px;
+      right: 40%;
+    }
+
+    @include breakpoint(1050px) {
+      @include circle($color-yellow, 150px);
+      bottom: -75px;
+    }
+  }
+
+  &::before {
+    @include breakpoint(850px) {
+      content: "";
+      position: absolute;
+      @include circle($color-yellow, 20px);
+      bottom: 60%;
+      right: 10%;
+    }
+
+    @include breakpoint(1050px) {
+      @include circle($color-yellow, 50px);
+      right: 20%;
+      bottom: 55%;
+    }
+  }
+}
+
+.blob--yellow {
+  position: absolute;
+  background-image: url($assets-yellow-blob-svg);
+  top: 70%;
+  left: -60%;
+  width: 100vw;
+  height: 100vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @include breakpoint(300px) {
+    top: 65%;
+  }
+
+  @include breakpoint(500px) {
+    top: 50%;
+    left: -60%;
+  }
+
+  @include breakpoint(650px) {
+    top: 30%;
+    left: -60%;
+  }
+
+  @include breakpoint(850px) {
+    top: 15%;
+    left: -550px;
+    width: 850px;
+    height: 850px;
+  }
+
+  @include breakpoint(1150px) {
+    top: 20%;
+    left: -450px;
+  }
+}
+
+.blob--red {
+  position: absolute;
+  background-image: url($assets-red-blob-svg);
+  top: -15%;
+  right: -20%;
+  width: 100vw;
+  height: 100vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @include breakpoint(300px) {
+    top: -20%;
+    right: -40%;
+  }
+
+  @include breakpoint(500px) {
+    top: -30%;
+  }
+
+  @include breakpoint(650px) {
+    top: -40%;
+  }
+
+  @include breakpoint(850px) {
+    top: -50%;
+    right: 10%;
+    width: 720px;
+    height: 720px;
+  }
+
+  @include breakpoint(1050px) {
+    top: -40%;
+    right: 20%;
+  }
+}
+
+.blob--blue {
+  position: absolute;
+  background-image: url($assets-blue-blob-svg);
+  bottom: -10%;
+  right: -60%;
+  width: 100vw;
+  height: 100vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @include breakpoint(300px) {
+    right: -70%;
+  }
+
+  @include breakpoint(450px) {
+    bottom: -20%;
+  }
+
+  @include breakpoint(600px) {
+    bottom: -40%;
+  }
+
+  @include breakpoint(700px) {
+    bottom: -65%;
+    right: -60%;
+  }
+
+  @include breakpoint(850px) {
+    bottom: -70%;
+    right: -40%;
+    width: 620px;
+    height: 620px;
+  }
+
+  @include breakpoint(1050px) {
+    bottom: -10%;
+    left: 75%;
+    width: 1150px;
+    height: 1150px;
+  }
+
+  @include breakpoint(1150px) {
+    bottom: -10%;
+    left: 80%;
+    width: 1150px;
+    height: 1150px;
+  }
+}
+
+.logo {
+
+  img {
+    max-height: 40px;
+
+    @include breakpoint(850px) {
+      max-height: 50px;
+    }
+  }
+
+  a {
+    &::after {
+      content: none;
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.header__content {
+  margin-top: 100px;
+  margin-bottom: 0;
+
+  @include breakpoint(1050px) {
+    margin-top: 170px;
+  }
+
+  .header__tagline {
+    margin-bottom: 60px;
+
+  @include breakpoint(650px) {
+      @include column(8);
+    }
+
+    @include breakpoint(850px) {
+      @include column(6);
+    }
+  }
+}
+
+.header__illustration {
+  margin-top: 60px;
+  margin-bottom: -40px;
+
+  @include breakpoint(650px) {
+    @include column(8);
+    @include prepend(2);
+    margin-top: 80px;
+  }
+
+  @include breakpoint(850px) {
+    @include column(5);
+    @include last;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-left: 40px;
+  }
+
+  @include breakpoint(1050px) {
+    bottom: -(100px + 40px);
+    right: 0;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.header__search {
+  position: relative;
+  clear: both;
+
+  @include breakpoint(850px) {
+    @include column(7);
+  }
+
+  input[type="search"] {
+    border: 2px solid transparent;
+    transition: border-color 0.15s ease-in-out;
+
+    &:focus {
+      border-color: $brand_color;
+    }
+  }
+}
+
+.header__search__icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  margin-top: -12px;
+  left: 15px;
+  z-index: 500;
+
+  svg {
+    fill: #999;
+  }
+}

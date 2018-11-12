@@ -1,55 +1,83 @@
-<div class="container-divider"></div>
-<div class="container">
-  <nav class="sub-nav">
+<nav class="sub-nav">
+  <div class="container">
     {{breadcrumbs}}
-    {{search submit=false}}
-  </nav>
+  </div>
+</nav>
 
-  <div class="category-container">
-    <div class="category-content">
-      <header class="page-header">
-        <h1>{{category.name}}</h1>
+<div class="category-container">
+  <header data-name="{{ category.name }}" class="page-header">
+    <div class="container">
+      <div class="category-name">
+        <h1 class="category__title">{{category.name}}</h1>
         {{#if category.description}}
           <p class="page-header-description">{{category.description}}</p>
         {{/if}}
-      </header>
+        </div>
+    </div>
 
-      <div class="section-tree">
-        {{#each sections}}
-          <section class="section">
-            <h3 class="section-tree-title">
-              <a href="{{url}}">{{name}}</a>
-            </h3>
-            {{#if articles}}
-              <ul class="article-list">
-                {{#each articles}}
-                  <li class="article-list-item{{#if promoted}} article-promoted{{/if}}">
+    <div class="bubble-1 rellax" data-rellax-speed="7"></div>
+    <div class="bubble-2 rellax" data-rellax-speed="5"></div>
+    <div class="bubble-3 rellax" data-rellax-speed="2"></div>
+  </header>
+  <div class="container clearfix">
+    <div class="section-tree">
+      <div class="grid-sizer"></div>
+      <div class="gutter-sizer"></div>
+      {{#each sections}}
+        <section class="section">
+          <h2 class="section-tree-title">
+            <a href="{{url}}">{{name}}</a>
+          </h2>
+          {{#if articles}}
+            <ul class="article-list">
+              {{#each articles}}
+                <li class="article-list-item{{#if promoted}} article-promoted{{/if}}">
+
+                  <a href="{{url}}" class="article-list-link">
                     {{#if promoted}}
                       <span data-title="{{t 'promoted'}}" class="icon-star"></span>
                     {{/if}}
-                    <a href="{{url}}" class="article-list-link">{{title}}</a>
+
+                    {{title}}
+
                     {{#if internal}}
                       <span class="icon-lock" title="{{t 'internal'}}"></span>
                     {{/if}}
-                  </li>
-                {{/each}}
-              </ul>
-              {{#if more_articles}}
-                <a href="{{url}}" class="see-all-articles">
-                  {{t 'show_all_articles' count=article_count}}
-                </a>
-              {{/if}}
-            {{else}}
-              <i class="section-empty">
-                <a href="{{url}}">{{t 'empty'}}</a>
-              </i>
+                  </a>
+                </li>
+              {{/each}}
+            </ul>
+            {{#if more_articles}}
+              <a href="{{url}}" class="see-all-articles">
+                {{t 'show_all_articles' count=article_count}}
+              </a>
             {{/if}}
-          </section>
-        {{else}}
-          <i class="category-empty">
-            <a href="{{category.url}}">{{t 'empty'}}</a>
-          </i>
-        {{/each}}
+          {{else}}
+            <i class="section-empty">
+              <a href="{{url}}">{{t 'empty'}}</a>
+            </i>
+          {{/if}}
+        </section>
+      {{else}}
+        <i class="category-empty">
+          <a href="{{category.url}}">{{t 'empty'}}</a>
+        </i>
+      {{/each}}
+    </div>
+  </div>
+</div>
+
+<div class="billboard billboard--left">
+  <div class="container">
+    <div class="billboard__illustration">
+      <img src="{{asset 'find-help.png'}}" alt="">
+    </div>
+
+    <div class="billboard__content">
+      <h2 class="billboard__heading">{{ settings.contact_support_heading }}</h2>
+      <p class="billboard__description">{{ settings.contact_support_paragraph }}</p>
+      <div class="billboard__button">
+        <a class="button" role="button" href="{{ settings.contact_support_button_destination }}">{{ settings.contact_support_button_text }}</a>
       </div>
     </div>
   </div>

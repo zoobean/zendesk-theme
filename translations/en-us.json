@@ -62,5 +62,25 @@
   "post_sharing_description": "Show social media sharing on post",
   "community_topic_group_label": "Community topic elements",
   "follow_topic_label": "Follow",
-  "follow_topic_description": "Users can follow a specific topic"
+  "follow_topic_description": "Users can follow a specific topic",
+
+  "whats_new_group_label": "What's New Section",
+  "whats_new_heading_description": "Text you want to display as the heading",
+  "whats_new_heading_label": "Heading",
+  "whats_new_paragraph_description": "Text you want to display under the heading as the description",
+  "whats_new_paragraph_label": "Accompanying text",
+  "whats_new_button_text_description": "Text you want to be displayed inside the button",
+  "whats_new_button_text_label": "Button label",
+  "whats_new_button_destination_description": "Where you want the button to link to",
+  "whats_new_button_destination_label": "Button destination",
+
+  "contact_support_group_label": "Contact Support Section",
+  "contact_support_heading_description": "Text you want to display as the heading",
+  "contact_support_heading_label": "Heading",
+  "contact_support_paragraph_description": "Text you want to display under the heading as the description",
+  "contact_support_paragraph_label": "Accompanying text",
+  "contact_support_button_text_description": "Text you want to be displayed inside the button",
+  "contact_support_button_text_label": "Button label",
+  "contact_support_button_destination_description": "Where you want the button to link to",
+  "contact_support_button_destination_label": "Button destination"
 }

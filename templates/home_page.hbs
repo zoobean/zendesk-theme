@@ -1,71 +1,72 @@
-<section class="section hero">
-  <div class="hero-inner">
-    {{search submit=false instant=settings.instant_search class='search search-full'}}
+<!-- https://support.zendesk.com/hc/en-us/community/posts/115005674127-How-to-edit-the-body-tag- -->
+<!-- Yes, I know ugh -->
+<script>
+ $('body').addClass('home');
+</script>
+
+<header class="header">
+  <div class="header__blobs">
+    <div class="blob blob--yellow"></div>
+    <div class="blob blob--red"></div>
+    <div class="blob blob--blue"></div>
   </div>
-</section>
+  <div class="container">
+    <div class="logo">
+      {{#link 'help_center'}}
+        <img src="{{asset 'beanstack-logo.svg'}}" alt="{{t 'home_page' name=help_center.name}}">
+      {{/link}}
+    </div>
+
+    <div class="header__content">
+      <h1 class="header__tagline">Let&rsquo;s help you find the information you need.</h1>
+      <div class="header__search">
+        <span class="header__search__icon">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <title>search</title>
+            <path d="M21.7 20.3l-3.7-3.7c1.2-1.5 2-3.5 2-5.6 0-5-4-9-9-9s-9 4-9 9c0 5 4 9 9 9 2.1 0 4.1-0.7 5.6-2l3.7 3.7c0.2 0.2 0.5 0.3 0.7 0.3s0.5-0.1 0.7-0.3c0.4-0.4 0.4-1 0-1.4zM4 11c0-3.9 3.1-7 7-7s7 3.1 7 7c0 1.9-0.8 3.7-2 4.9 0 0 0 0 0 0s0 0 0 0c-1.3 1.3-3 2-4.9 2-4 0.1-7.1-3-7.1-6.9z"></path>
+          </svg>
+        </span>
+        {{search submit=false instant=settings.instant_search class='search search-full'}}
+      </div>
+
+      <div class="header__illustration">
+        <img src="{{asset 'header-illustration.png'}}" alt="">
+      </div>
+    </div>
+  </div>
+</header>
 
 <div class="container">
+
   <section class="section knowledge-base">
     <section class="categories blocks">
+      <h2 class="blocks__title">Browse by Topic</h2>
       <ul class="blocks-list">
         {{#each categories}}
-          {{#if ../has_multiple_categories}}
-            <li class="blocks-item">
-              <a href='{{url}}' class="blocks-item-link">
-                <h4 class="blocks-item-title">{{name}}</h4>
-                <p class="blocks-item-description">{{excerpt description}}</p>
-              </a>
-            </li>
-          {{else}}
-            {{#each sections}}
-              <li class="blocks-item">
-                <a href='{{url}}' class="blocks-item-link">
-                  <h4 class="blocks-item-title">
-                    {{name}}
-                  </h4>
-                  <p class="blocks-item-description">{{excerpt description}}</p>
-                </a>
-              </li>
-            {{/each}}
-          {{/if}}
+          <li class="blocks-item">
+            <a href='{{url}}' class="blocks-item-link">
+              <h3 class="blocks-item-title">{{name}}</h3>
+              <p class="blocks-item-description">{{excerpt description}}This is a description and it goes on and on and on until it just stops for some reason.</p>
+            </a>
+          </li>
         {{/each}}
       </ul>
-      {{pagination}}
     </section>
-
-    {{#if promoted_articles}}
-      <section class="articles">
-        <h3>{{t 'promoted_articles'}}</h3>
-        <ul class="article-list promoted-articles">
-          {{#each promoted_articles}}
-            <li class="promoted-articles-item">
-              <a href="{{url}}">
-                {{title}}
-              </a>
-              {{#if internal}}
-                <span class="icon-lock" title="{{t 'internal'}}"></span>
-              {{/if}}
-            </li>
-          {{/each}}
-        </ul>
-      </section>
-    {{/if}}
   </section>
+</div>
 
-  {{#if help_center.community_enabled}}
-    <section class="section community">
-      <h2>{{t 'community'}}</h2>
-      {{#link 'community' class='community-link'}}
-        {{t 'join_conversation'}}
-      {{/link}}
+<div class="billboard billboard--right">
+  <div class="container">
+    <div class="billboard__illustration">
+      <img src="{{asset 'new-features-illustration.png'}}" alt="">
+    </div>
 
-      <div class="community-image"></div>
-    </section>
-  {{/if}}
-
-  <section class="section activity">
-    {{#if settings.show_recent_activity}}
-      {{recent_activity}}
-    {{/if}}
-  </section>
+    <div class="billboard__content">
+      <h2 class="billboard__heading">{{ settings.whats_new_heading }}</h2>
+      <p class="billboard__description">{{ settings.whats_new_paragraph }}</p>
+      <div class="billboard__button">
+        <a href="{{ settings.whats_new_button_destination }}" class="button" role="button">{{ settings.whats_new_button_text }}</a>
+      </div>
+    </div>
+  </div>
 </div>

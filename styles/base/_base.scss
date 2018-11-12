@@ -1,0 +1,128 @@
+/***** Base *****/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $background_color;
+  color: $text_color;
+  font-family: $text_font;
+  font-size: $font-size-base;
+  font-weight: $font-weight-base;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+
+  > main {
+    @include desktop {
+      min-height: 65vh;
+    }
+  }
+}
+
+#preview-bar-container {
+  display: none;
+}
+
+body:not(.home) {
+  padding-top: 76px;
+
+  @include breakpoint(720px) {
+    padding-top: 91px;
+  }
+
+  main {
+    margin-top: 70px;
+  }
+}
+
+main {
+  margin-bottom: 100px;
+
+  > .container {
+    @include pie-clearfix;
+  }
+}
+
+input,
+textarea {
+  color: #000;
+  font-size: $input-font-size;
+}
+
+input {
+  font-weight: $font-weight-light;
+  max-width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  transition: border .12s ease-in-out;
+
+  &:focus {
+    border: 1px solid $brand_color;
+  }
+}
+
+input[disabled] {
+  background-color: #ddd;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url($assets-dropdown-arrow-svg) no-repeat #fff;
+  background-position: right 10px center;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  padding: 8px 30px 8px 10px;
+  outline: none;
+  color: $field-text-focus-color;
+  width: 100%;
+
+  &:focus {
+    border: 1px solid $brand_color;
+  }
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+textarea {
+  border: 1px solid $border-color;
+  border-radius: 2px;
+  resize: vertical;
+  width: 100%;
+  outline: none;
+  padding: 10px;
+
+  &:focus {
+    border: 1px solid $brand_color;
+  }
+}
+
+.container {
+  @include container;
+}
+
+.container-divider {
+  border-top: 1px solid $border-color;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.error-page {
+  @include max-width-container;
+}
+
+.dropdown-toggle::after {
+  color: inherit;
+}
+
+.clearfix {
+  @include pie-clearfix;
+}

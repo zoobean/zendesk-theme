@@ -4,6 +4,33 @@
 
 $(document).ready(function() {
 
+  /**************************************
+  *********** Custom theme JS ***********
+  *************************************** */
+  $('.inside-header__search-trigger').click(function() {
+    $('.inside-header').toggleClass('search-show');
+    $('.inside-header__search').toggleClass('show');
+  });
+
+  $('.section-tree').masonry({
+    // set itemSelector so .grid-sizer is not used in layout
+    itemSelector: '.section-tree .section',
+    columnWidth: '.grid-sizer',
+    gutter: '.gutter-sizer',
+    percentPosition: true
+  });
+
+  var elementExists = document.querySelectorAll(".rellax").length;
+
+  if(elementExists > 0) {
+    var rellax = new Rellax('.rellax');
+  }
+
+  /**************************************
+  ***** Default Copenhagen theme JS *****
+  ************ Do Not Modify ************
+  *************************************** */
+
   // social share popups
   $(".share a").click(function(e) {
     e.preventDefault();

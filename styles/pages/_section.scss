@@ -1,0 +1,25 @@
+/***** Section pages *****/
+.section-name {
+  padding-bottom: 50px;
+  
+  @include breakpoint(600px) {
+    @include column(8);
+    padding-bottom: 50px;
+  }
+
+  @include breakpoint(800px) {
+    @include column(5);
+    padding-bottom: 50px;
+  }
+}
+
+.section-content {
+  .article-list {
+    width: 100%;
+    clear: both;
+
+    @include breakpoint(800px) {
+      @include column(5);
+    }
+  }
+}

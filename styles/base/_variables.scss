@@ -1,0 +1,53 @@
+// Variables
+
+// Colors
+$brand_color: #3859C9 !default;
+$brand_text_color: #fff !default; //Color for text with an accent color background
+$text_color: #1a1a1a !default;
+$text_color_light: #6a6a6a;
+$link_color: #3859C9 !default;
+$background_color: #fff !default;
+$secondary_background_color: #F7F6F4;
+
+$color-yellow: #FFD162;
+$color-blue: #BBEFEF;
+$color-red: #FFAA9C;
+
+$color-white: #fff;
+$color-black: #000;
+
+$border-color-light: #f1f1f1;
+$border-color-darker: #eaeaea;
+
+$visited-link-color: zass-darken($link_color, 20%);
+$hover-button-color: zass-darken($brand_color, 20%);
+$secondary-text-color: zass-lighten($text_color, 20%);
+
+$primary-shade: zass-darken($background_color, 3%); //#f8f8f8 for the default background_color
+$secondary-shade: zass-darken($background_color, 5%); //#f2f2f2 for the default background_color
+
+$font-size-bigger: 19.2px;
+$font-size-base: 16px;
+$font-size-navigation: 13.333px;
+$font-size-small: 13.333px;
+$font-size-smaller: 11.111px;
+
+$border-color: #e5e5e5;
+
+$button-color: $brand_color;
+
+$input-font-size: 14px;
+$field-text-color: #999;
+$field-text-focus-color: #555;
+
+// Breakpoints variables
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$max-width-container: 1160px;
+
+// Fonts
+$heading_font: 'Poppins', sans-serif !default;
+$text_font: 'Roboto', sans-serif !default;
+$font-weight-base: 400;
+$font-weight-light: 300;
+$font-weight-semibold: 600;

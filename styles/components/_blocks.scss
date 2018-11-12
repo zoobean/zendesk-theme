@@ -1,0 +1,105 @@
+/***** Blocks *****/
+/* Used in Homepage#categories and Community#topics */
+.blocks {
+
+  .blocks__title {
+    margin-bottom: 40px;
+
+    @include breakpoint(1150px) {
+      margin-bottom: 50px;
+    }
+  }
+
+  .blocks-item {
+    @include column(12);
+    color: $brand_color;
+    margin-bottom: 40px;
+
+    @include breakpoint(650px) {
+      @include column(6);
+      @include last-col2;
+    }
+
+    @include breakpoint(950px) {
+      @include column(4);
+      @include last-col3;
+    }
+
+    @include breakpoint(1150px) {
+      @include column(3);
+      @include last-col4;
+    }
+  }
+
+  .blocks-item-link {
+    color: $text_color;
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: -20px;
+      width: calc(100vw - 20px);
+      height: calc(100% + 20px);
+      background-color: $color-white;
+      z-index: -1;
+      border-radius: 6px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      opacity: 0;
+      transition: opacity 0.15s ease-in-out;
+
+      @include breakpoint(600px) {
+        top: 3px;
+        left: -30px;
+        width: 100%;
+        height: calc(100% + 20px);
+      }
+    }
+
+    h3 {
+      text-decoration: underline;
+      color: $brand_color;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: none;
+      color: $brand_color;
+      outline: none;
+
+      &::after {
+        opacity: 1;
+      }
+
+      h3 {
+        color: $text_color;
+      }
+    }
+
+    &:focus {
+      &::after {
+        border: 2px solid $brand_color;
+      }
+    }
+  }
+
+  .blocks-item-title {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+
+  &-item-description {
+    font-weight: $font-weight-light;
+    margin: 0;
+    color: $text_color_light;
+    max-width: 80%;
+  }
+
+  &-item-description:not(:empty) {
+    margin-top: 10px;
+  }
+}

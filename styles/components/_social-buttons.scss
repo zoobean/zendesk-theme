@@ -1,0 +1,18 @@
+.social-button {
+  display: flex;
+  padding: 10px;
+  border-radius: 50%;
+  transition: background-color 0.15s ease-in-out;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &[aria-selected="true"] {
+    background-color: mix($color-black, $secondary_background_color, 10%);
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}

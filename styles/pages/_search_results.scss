@@ -1,0 +1,64 @@
+/***** Search results *****/
+.search-results {
+  display: flex;
+  flex-direction: column;
+  //flex-wrap: wrap;
+  justify-content: space-between;
+
+  .page-header .container {
+    .category-name {
+      padding-bottom: 70px;
+    }
+  }
+}
+
+.search-results-column {
+  @include breakpoint(900px) {
+    @include column(6);
+  }
+}
+
+.search-results-list {
+  margin-bottom: 25px;
+
+  > li {
+    padding: 25px 0;
+  }
+}
+
+.search-result {
+  border-bottom: 1px solid $border-color-light;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  .meta-group {
+    align-items: center;
+    margin-top: -5px;
+  }
+}
+
+.search-result-link {
+  font-size: 19.2px;
+  font-weight: bold;
+}
+
+.search-result-description {
+  margin-top: 5px;
+
+  em {
+    font-weight: bold;
+    font-style: normal;
+  }
+}
+
+.search-result-breadcrumbs {
+  margin: 0;
+
+  li a,
+  li a:visited {
+    color: $text_color_light;
+    text-decoration: none;
+  }
+}

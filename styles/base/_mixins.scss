@@ -1,0 +1,133 @@
+// Mixins
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin max-width-container {
+  @media (min-width: #{$max-width-container}) {
+    padding: 0;
+    width: 90%;
+  }
+
+  max-width: $max-width-container;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin text-overflow {
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+  word-break: break-word;
+}
+
+@mixin content-body {
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  p {
+    margin-bottom: 1.25em;
+  }
+
+  ul, ol {
+    padding-left: 20px;
+    list-style-position: outside;
+    margin: 0 0 20px 20px;
+
+    [dir="rtl"] & {
+      padding-right: 20px;
+      padding-left: 0;
+      margin-left: 0;
+      margin-right: 20px;
+    }
+  }
+
+  // Sub level list
+  ul > ul, ol > ol, ol > ul, ul > ol, li > ul, li > ol {
+    margin: 0;
+  }
+
+  ul > li > ul {
+    margin-top: 0.7em;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  code {
+    background: $primary-shade;
+    border: 1px solid $border-color;
+    border-radius: 3px;
+    padding: 0 5px;
+    margin: 0 2px;
+  }
+
+  pre {
+    background: $primary-shade;
+    border: 1px solid $border-color;
+    border-radius: 3px;
+    padding: 10px 15px;
+    overflow: auto;
+    white-space: pre;
+  }
+
+  blockquote {
+    border-left: 1px solid $border-color;
+    color: $secondary-text-color;
+    font-style: italic;
+    padding: 0 15px;
+  }
+}
+
+@mixin clearfix {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+@mixin pie-clearfix {
+  *zoom: 1;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin push-outside() {
+  width: 100vw;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+@mixin breakpoint($min-width) {
+  @media screen and (min-width: $min-width) {
+    @content;
+  }
+}
+
+@mixin circle($color, $size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  background-color: $color;
+}

@@ -1,0 +1,160 @@
+$gutter_width: 1.304%;
+$columns: 12;
+$column_width: 7.1304%;
+$grid_width: 100%;
+
+@mixin container($max-width: 71.875em) {
+  width: $grid_width;
+  margin: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  max-width: $max-width;
+
+  @include breakpoint(600px) {
+    width: 80%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@function column_width($num) {
+  @return ($num * $column_width) + (($num - 1) * ($gutter_width));
+}
+
+@mixin column($num) {
+  box-sizing: border-box;
+  display: inline;
+  float: left;
+  width: column_width($num);
+  margin-right: $gutter_width;
+  margin-left: 0;
+}
+
+@mixin reset-column {
+  display: initial;
+  margin-right: 0;
+  float: none;
+  width: auto;
+}
+
+@mixin prepend($num) {
+  margin-left: column_width($num) + ($gutter_width);
+}
+
+@mixin append($num) {
+  margin-right: column_width($num) + ($gutter_width + $gutter_width);
+}
+
+@mixin last {
+  margin-right: 0;
+}
+
+@mixin last-col2 {
+  &:nth-of-type(n) {
+    margin-right: $gutter-width;
+    float: left;
+    clear: none;
+  }
+
+  &:nth-of-type(2n+2) {
+    @include last;
+    float: right;
+  }
+
+  &:nth-of-type(2n+3) {
+    clear: both;
+  }
+}
+
+@mixin last-col3 {
+  &:nth-of-type(n) {
+    margin-right: $gutter-width;
+    float: left;
+    clear: none;
+  }
+
+  &:nth-of-type(3n+3) {
+    @include last;
+    float: right;
+  }
+
+  &:nth-of-type(3n+4) {
+    clear: both;
+  }
+}
+
+@mixin last-col4 {
+  &:nth-of-type(n) {
+    margin-right: $gutter-width;
+    float: left;
+    clear: none;
+  }
+
+  &:nth-of-type(4n+4) {
+    @include last;
+    float: right;
+  }
+
+  &:nth-of-type(4n+5) {
+    clear: both;
+  }
+}
+
+@mixin last-col6 {
+  &:nth-of-type(n) {
+    margin-right: $gutter-width;
+    float: left;
+    clear: none;
+  }
+
+  &:nth-of-type(6n+6) {
+    @include last;
+    float: right;
+  }
+
+  &:nth-of-type(6n+7) {
+    clear: both;
+  }
+}
+
+@mixin last-col8 {
+  &:nth-of-type(n) {
+    margin-right: $gutter-width;
+    float: left;
+    clear: none;
+  }
+
+  &:nth-of-type(8n+8) {
+    @include last;
+    float: right;
+  }
+
+  &:nth-of-type(8n+9) {
+    clear: both;
+  }
+}
+
+
+.grid__column {
+  @include column(1);
+  background-color: red;
+  height: 500px;
+
+  &.last {
+    @include last;
+  }
+}
+
+.first {
+  @include column(3);
+  @include append(3);
+  height: 50px;
+  background: blue;
+}
+
+.second {
+  @include column(6);
+  @include last;
+  height: 50px;
+  background: blue;
+}

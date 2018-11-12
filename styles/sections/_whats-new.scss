@@ -1,0 +1,130 @@
+.billboard {
+  clear: both;
+  background-color: $secondary_background_color;
+  margin-bottom: -100px;
+  margin-top: 100px;
+
+  @include breakpoint(600px) {
+    position: relative;
+  }
+
+  .container {
+    border-bottom: 1px solid $border-color;
+    @include pie-clearfix;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(600px) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+}
+
+.billboard__button {
+  order: 2;
+  margin-top: 50px;
+  clear: both;
+}
+
+.billboard__content {
+  order: 1;
+
+  @include breakpoint(500px) {
+    @include column(10);
+  }
+
+  @include breakpoint(600px) {
+    @include column(7);
+    order: 1;
+  }
+
+  @include breakpoint(900px) {
+    @include column(6);
+    @include append(3);
+  }
+
+  @include breakpoint(1150px) {
+    @include column(4);
+    @include append(5);
+  }
+}
+
+.billboard__illustration {
+  @include column(10);
+  margin-top: 80px;
+  order: 3;
+
+  @include breakpoint(400px) {
+    @include column(6);
+  }
+
+  @include breakpoint(600px) {
+    @include column(4);
+    @include prepend(1);
+    @include last;
+    margin-top: 0;
+  }
+
+  @include breakpoint(900px) {
+    @include column(3);
+    @include last;
+    margin-top: 0;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.billboard__description {
+  margin: 0;
+}
+
+.billboard__heading {
+  margin-bottom: 5px;
+}
+
+.billboard--right {
+  .billboard__content {
+
+    @include breakpoint(600px) {
+      @include column(7);
+      @include last;
+      order: 3;
+    }
+
+    @include breakpoint(900px) {
+      @include column(8);
+      @include prepend(1);
+      @include last;
+    }
+
+    @include breakpoint(1150px) {
+      @include column(5);
+      //@include prepend(1);
+      @include last;
+    }
+  }
+
+  .billboard__illustration {
+    @include breakpoint(400px) {
+      @include column(6);
+    }
+
+    @include breakpoint(600px) {
+      @include column(4);
+      @include append(1);
+      margin-top: 0;
+      order: 1;
+    }
+
+    @include breakpoint(900px) {
+      @include column(3);
+      @include append(1);
+      margin-top: 0;
+    }
+  }
+}
