@@ -1,156 +1,190 @@
 {
-  "name": "Beanstack New",
+  "name": "Beanstack New 2",
   "author": "Zoobean",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "api_version": 1,
   "default_locale": "en-us",
   "settings": [{
-    "label": "colors_group_label",
-    "variables": [{
-      "identifier": "brand_color",
-      "type": "color",
-      "description": "brand_color_description",
-      "label": "brand_color_label",
-      "value": "#3859C9"
-    }, {
-      "identifier": "brand_text_color",
-      "type": "color",
-      "description": "brand_text_color_description",
-      "label": "brand_text_color_label",
-      "value": "#FFFFFF"
-    }, {
-      "identifier": "text_color",
-      "type": "color",
-      "description": "text_color_description",
-      "label": "text_color_label",
-      "value": "#333333"
-    }]
-  },{
-    "label": "brand_group_label",
-    "variables": [{
-      "identifier": "logo",
-      "type": "file",
-      "description": "logo_description",
-      "label": "logo_label"
-    }, {
-      "identifier": "favicon",
-      "type": "file",
-      "description": "favicon_description",
-      "label": "favicon_label"
-    }]
-  }, {
-    "label": "search_group_label",
-    "variables":[{
-      "identifier": "instant_search",
-      "type": "checkbox",
-      "description": "instant_search_description",
-      "label": "instant_search_label",
-      "value": true
-    }, {
-      "identifier": "scoped_kb_search",
-      "type": "checkbox",
-      "description": "scoped_knowledge_base_search_description",
-      "label": "scoped_knowledge_base_search_label",
-      "value": true
-    }]
-  }, {
-    "label": "article_page_group_label",
-    "variables": [{
-      "identifier": "show_articles_in_section",
-      "type": "checkbox",
-      "description": "articles_in_section_description",
-      "label": "articles_in_section_label",
-      "value": true
-    }, {
-      "identifier": "show_article_author",
-      "type": "checkbox",
-      "description": "article_author_description",
-      "label": "article_author_label",
-      "value": true
-    }, {
-      "identifier": "show_related_articles",
-      "type": "checkbox",
-      "description": "related_articles_description",
-      "label": "related_articles_label",
-      "value": true
-    }]
-  }, {
-    "label": "community_post_group_label",
-    "variables": [{
-      "identifier": "show_follow_post",
-      "type": "checkbox",
-      "description": "follow_post_description",
-      "label": "follow_post_label",
-      "value": true
-    }, {
-      "identifier": "show_post_sharing",
-      "type": "checkbox",
-      "description": "post_sharing_description",
-      "label": "post_sharing_label",
-      "value": true
-    }]
-  }, {
-    "label": "community_topic_group_label",
-    "variables": [{
-      "identifier": "show_follow_topic",
-      "type": "checkbox",
-      "description": "follow_topic_description",
-      "label": "follow_topic_label",
-      "value": true
-    }]
-  }, {
-    "label": "whats_new_group_label",
-    "variables": [{
-      "identifier": "whats_new_heading",
-      "type": "text",
-      "description": "whats_new_heading_description",
-      "label": "whats_new_heading_label",
-      "value": "See what's new"
-    }, {
-      "identifier": "whats_new_paragraph",
-      "type": "text",
-      "description": "whats_new_paragraph_description",
-      "label": "whats_new_paragraph_label",
-      "value": "Explore the latest features and improvements for the Beanstack web app."
-    }, {
-      "identifier": "whats_new_button_text",
-      "type": "text",
-      "description": "whats_new_button_text_description",
-      "label": "whats_new_button_text_label",
-      "value": "View all updates"
-    }, {
-      "identifier": "whats_new_button_destination",
-      "type": "text",
-      "description": "whats_new_button_destination_description",
-      "label": "whats_new_button_destination_label",
-      "value": "https://zoobean.zendesk.com/requests/new"
-    }]
-  }, {
-    "label": "contact_support_group_label",
-    "variables": [{
-      "identifier": "contact_support_heading",
-      "type": "text",
-      "description": "contact_support_heading_description",
-      "label": "contact_support_heading_label",
-      "value": "Don't see what you need?"
-    }, {
-      "identifier": "contact_support_paragraph",
-      "type": "text",
-      "description": "contact_support_paragraph_description",
-      "label": "contact_support_paragraph_label",
-      "value": "Submit a ticket to our support team."
-    }, {
-      "identifier": "contact_support_button_text",
-      "type": "text",
-      "description": "contact_support_button_text_description",
-      "label": "contact_support_button_text_label",
-      "value": "Submit a Ticket"
-    }, {
-      "identifier": "contact_support_button_destination",
-      "type": "text",
-      "description": "contact_support_button_destination_description",
-      "label": "contact_support_button_destination_label",
-      "value": "https://zoobean.zendesk.com/hc/en-us/requests/new"
-    }]
-  }]
+      "label": "colors_group_label",
+      "variables": [{
+          "identifier": "brand_color",
+          "type": "color",
+          "description": "brand_color_description",
+          "label": "brand_color_label",
+          "value": "#3859C9"
+        },{
+          "identifier": "brand_text_color",
+          "type": "color",
+          "description": "brand_text_color_description",
+          "label": "brand_text_color_label",
+          "value": "#FFFFFF"
+        },{
+          "identifier": "text_color",
+          "type": "color",
+          "description": "text_color_description",
+          "label": "text_color_label",
+          "value": "#333333"
+        }
+      ]
+    },
+    {
+      "label": "brand_group_label",
+      "variables": [
+        {
+          "identifier": "logo",
+          "type": "file",
+          "description": "logo_description",
+          "label": "logo_label"
+        },
+        {
+          "identifier": "favicon",
+          "type": "file",
+          "description": "favicon_description",
+          "label": "favicon_label"
+        }
+      ]
+    },
+    {
+      "label": "search_group_label",
+      "variables": [
+        {
+          "identifier": "instant_search",
+          "type": "checkbox",
+          "description": "instant_search_description",
+          "label": "instant_search_label",
+          "value": true
+        },
+        {
+          "identifier": "scoped_kb_search",
+          "type": "checkbox",
+          "description": "scoped_knowledge_base_search_description",
+          "label": "scoped_knowledge_base_search_label",
+          "value": true
+        }
+      ]
+    },
+    {
+      "label": "article_page_group_label",
+      "variables": [
+        {
+          "identifier": "show_articles_in_section",
+          "type": "checkbox",
+          "description": "articles_in_section_description",
+          "label": "articles_in_section_label",
+          "value": true
+        },
+        {
+          "identifier": "show_article_author",
+          "type": "checkbox",
+          "description": "article_author_description",
+          "label": "article_author_label",
+          "value": true
+        },
+        {
+          "identifier": "show_related_articles",
+          "type": "checkbox",
+          "description": "related_articles_description",
+          "label": "related_articles_label",
+          "value": true
+        }
+      ]
+    },
+    {
+      "label": "community_post_group_label",
+      "variables": [
+        {
+          "identifier": "show_follow_post",
+          "type": "checkbox",
+          "description": "follow_post_description",
+          "label": "follow_post_label",
+          "value": true
+        },
+        {
+          "identifier": "show_post_sharing",
+          "type": "checkbox",
+          "description": "post_sharing_description",
+          "label": "post_sharing_label",
+          "value": true
+        }
+      ]
+    },
+    {
+      "label": "community_topic_group_label",
+      "variables": [
+        {
+          "identifier": "show_follow_topic",
+          "type": "checkbox",
+          "description": "follow_topic_description",
+          "label": "follow_topic_label",
+          "value": true
+        }
+      ]
+    },
+    {
+      "label": "whats_new_group_label",
+      "variables": [
+        {
+          "identifier": "whats_new_heading",
+          "type": "text",
+          "description": "whats_new_heading_description",
+          "label": "whats_new_heading_label",
+          "value": "See what's new"
+        },
+        {
+          "identifier": "whats_new_paragraph",
+          "type": "text",
+          "description": "whats_new_paragraph_description",
+          "label": "whats_new_paragraph_label",
+          "value": "Explore the latest features and improvements for the Beanstack web app."
+        },
+        {
+          "identifier": "whats_new_button_text",
+          "type": "text",
+          "description": "whats_new_button_text_description",
+          "label": "whats_new_button_text_label",
+          "value": "View all updates"
+        },
+        {
+          "identifier": "whats_new_button_destination",
+          "type": "text",
+          "description": "whats_new_button_destination_description",
+          "label": "whats_new_button_destination_label",
+          "value": "https://zoobean.zendesk.com/hc/en-us/community/topics/200807587-Product-Updates"
+        }
+      ]
+    },
+    {
+      "label": "contact_support_group_label",
+      "variables": [
+        {
+          "identifier": "contact_support_heading",
+          "type": "text",
+          "description": "contact_support_heading_description",
+          "label": "contact_support_heading_label",
+          "value": "Don't see what you need?"
+        },
+        {
+          "identifier": "contact_support_paragraph",
+          "type": "text",
+          "description": "contact_support_paragraph_description",
+          "label": "contact_support_paragraph_label",
+          "value": "Submit a ticket to our support team."
+        },
+        {
+          "identifier": "contact_support_button_text",
+          "type": "text",
+          "description": "contact_support_button_text_description",
+          "label": "contact_support_button_text_label",
+          "value": "Submit a Ticket"
+        },
+        {
+          "identifier": "contact_support_button_hello",
+          "type": "text",
+          "description": "contact_support_button_hello_description",
+          "label": "contact_support_button_hello_label",
+          "value": "https://zoobean.zendesk.com/hc/en-us/requests/new"
+        }
+      ]
+    }
+  ]
 }
