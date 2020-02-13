@@ -26,8 +26,6 @@ $(document).ready(function() {
     var rellax = new Rellax('.rellax');
   }
 
-  console.log("JS Running!");
-
   /**************************************
   ******** Hubspot Modal Controls *******
   *************************************** */
