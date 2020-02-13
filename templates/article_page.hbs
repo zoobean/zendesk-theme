@@ -111,8 +111,39 @@
       <h2 class="billboard__heading">{{ settings.contact_support_heading }}</h2>
       <p class="billboard__description">{{ settings.contact_support_paragraph }}</p>
       <div class="billboard__button">
-        <a class="button" role="button" href="{{ settings.contact_support_button_destination }}">{{ settings.contact_support_button_text }}</a>
+        <button class="button open-ticket-modal" role="button">{{ settings.contact_support_button_text }}</button>
       </div>
     </div>
   </div>
+</div>
+
+<div class="modal-container">
+  <div class="modal modal--large modal--inside-scroll" role="dialog" id="ticket-modal" aria-modal="true" aria-labelledby="ticket-modal__title">
+    <button aria-label="Close Modal" class="modal__close">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">
+        <path d="M7.9785156,5.9804688 C7.16502514,5.98147612 6.43317991,6.47506297 6.12743766,7.22891271 C5.82169542,7.98276245 6.00296867,8.84668688 6.5859375,9.4140625 L12.171875,15 L6.5859375,20.585938 C6.06346335,21.0875729 5.85299946,21.8324702 6.03571422,22.5333498 C6.21842897,23.2342293 6.76577131,23.7815715 7.46665092,23.964286 C8.16753053,24.1470005 8.91242778,23.9365363 9.4140625,23.414062 L15,17.828125 L20.585938,23.414062 C21.0875711,23.9365436 21.832472,24.1470133 22.5333561,23.9642996 C23.2342402,23.781586 23.781586,23.2342402 23.9642996,22.5333561 C24.1470133,21.832472 23.9365436,21.0875711 23.414062,20.585938 L17.828125,15 L23.414062,9.4140625 C24.0055828,8.8390798 24.1834396,7.95993066 23.8619313,7.20023704 C23.5404229,6.44054343 22.785505,5.95615194 21.960938,5.9804688 C21.4413408,5.99595105 20.9481812,6.21310935 20.585938,6.5859375 L15,12.171875 L9.4140625,6.5859375 C9.03704784,6.19838589 8.51919671,5.97997251 7.9785156,5.9804688 Z"/>
+      </svg>
+    </button>
+
+    <div class="modal__inner">
+
+      <header class="modal__header">
+        <h3 id="ticket-modal__title">Submit a Ticket</h3>
+      </header>
+
+      <div class="modal__content">
+        <!--[if lte IE 8]>
+        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+        <![endif]-->
+        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+        <script>
+          hbspt.forms.create({
+        	portalId: "4651150",
+        	formId: "0c1f76b2-36cb-41e6-a812-c43eeff93bf7"
+        });
+        </script>
+      </div>
+    </div>
+  </div>
+  <div class="modal-backdrop"></div>
 </div>

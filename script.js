@@ -26,6 +26,32 @@ $(document).ready(function() {
     var rellax = new Rellax('.rellax');
   }
 
+  console.log("JS Running!");
+
+  /**************************************
+  ******** Hubspot Modal Controls *******
+  *************************************** */
+  $('.open-ticket-modal').on('click', function() {
+    $('.modal-container').addClass('open');
+    $('.modal').removeAttr('aria-hidden');
+    document.body.classList.add('no-scroll');
+
+    $(document).on('keydown', function(e) {
+      if(e.keyCode === 27) {
+        $('.modal-container').removeClass('open');
+        $('.modal').attr('aria-hidden', 'true');
+        document.body.classList.remove('no-scroll');
+      }
+    })
+  });
+
+  $('.modal__close, .modal-backdrop').on('click', function() {
+    $('.modal-container').removeClass('open');
+    $('.modal').attr('aria-hidden', 'true');
+    document.body.classList.remove('no-scroll');
+  })
+
+
   /**************************************
   ***** Default Copenhagen theme JS *****
   ************ Do Not Modify ************

@@ -144,7 +144,7 @@
       "type": "text",
       "description": "contact_support_button_text_description",
       "label": "contact_support_button_text_label",
-      "value": "Get in touch"
+      "value": "Submit a Ticket"
     }, {
       "identifier": "contact_support_button_destination",
       "type": "text",
