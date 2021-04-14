@@ -207,10 +207,10 @@ $header-height: 371px;
 .logo {
 
   img {
-    max-height: 40px;
+    max-height: 24px;
 
     @include breakpoint(850px) {
-      max-height: 50px;
+      max-height: 30px;
     }
   }
 

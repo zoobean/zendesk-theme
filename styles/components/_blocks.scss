@@ -2,18 +2,23 @@
 /* Used in Homepage#categories and Community#topics */
 .blocks {
 
+  .blocks-list {
+    @include pie-clearfix;
+    margin: 0 -25px;
+  }
+
   .blocks__title {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 
     @include breakpoint(1150px) {
-      margin-bottom: 50px;
+      margin-bottom: 40px;
     }
   }
 
   .blocks-item {
     @include column(12);
     color: $brand_color;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 
     @include breakpoint(650px) {
       @include column(6);
@@ -25,7 +30,7 @@
       @include last-col3;
     }
 
-    @include breakpoint(1150px) {
+    @include breakpoint(1350px) {
       @include column(3);
       @include last-col4;
     }
@@ -36,26 +41,27 @@
     display: inline-block;
     text-decoration: none;
     position: relative;
+    padding: 25px;
 
     &::after {
       content: "";
       position: absolute;
-      top: 3px;
-      left: -20px;
-      width: calc(100vw - 20px);
-      height: calc(100% + 20px);
       background-color: $color-white;
       z-index: -1;
       border-radius: 6px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       opacity: 0;
       transition: opacity 0.15s ease-in-out;
+      top: 0;
+      left: 5px;
+      width: calc(100% - 10px);
+      height: 100%;
 
       @include breakpoint(600px) {
-        top: 3px;
-        left: -30px;
+        top: 0;
+        left: 0;
         width: 100%;
-        height: calc(100% + 20px);
+        height: 100%;
       }
     }
 
@@ -90,13 +96,13 @@
   .blocks-item-title {
     display: inline-block;
     margin-bottom: 0;
+    margin-top: 0;
   }
 
   &-item-description {
     font-weight: $font-weight-light;
     margin: 0;
     color: $text_color_light;
-    max-width: 80%;
   }
 
   &-item-description:not(:empty) {
