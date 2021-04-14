@@ -51,3 +51,44 @@ $text_font: 'Roboto', sans-serif !default;
 $font-weight-base: 400;
 $font-weight-light: 300;
 $font-weight-semibold: 600;
+
+$sans: 'museo-sans-rounded', sans-serif;
+
+$white: #fff;
+
+$brick: #e85648;
+$denim: #196dd5;
+$pebble: #d9d9d9;
+$stone: #b5b5b5;
+
+$gray: #656565;
+
+$lighterGray: #eaeaea;
+$lightestGray: #f2f2f2;
+
+$pastelRed: #FCE6E4;
+$darkRed: #AB3F35;
+
+$textColorLight: $gray;
+
+$borderColor: $lightestGray;
+
+$error: $brick;
+$errorDark: $darkRed;
+
+$z-index-modal: 900;
+
+// Reused properties
+$borderRadiusDefault: 8px;
+$borderRadiusSmall: 6px;
+
+// Breakpoints
+$bp-500: 500px;
+$bp-750: 750px;
+$bp-900: 900px;
+$bp-1100: 1100px;
+$bp-1250: 1250px;
+
+@mixin transition($prop: all) {
+  transition: $prop 0.13s ease;
+}
