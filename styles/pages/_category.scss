@@ -140,10 +140,27 @@
   display: block;
   color: $text_color;
   text-decoration: none;
+  display: flex;
+  align-items: center;
 
   &:hover {
     color: $brand_color;
     text-decoration: underline;
+
+    svg {
+      fill: $brand_color;
+    }
+  }
+}
+
+.article-list-link__icon {
+  line-height: 0;
+  margin-right: 12px;
+
+  svg {
+    width: 18px;
+    height: 18px;
+    fill: $text_color;
   }
 }
 

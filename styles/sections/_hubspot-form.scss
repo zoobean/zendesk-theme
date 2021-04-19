@@ -176,7 +176,10 @@
   font-weight: 700;
   color: #424242;
 
-  input {
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="tel"] {
     height: 44px;
     padding: 0 15px;
     border: 2px solid #d9d9d9;
@@ -214,6 +217,10 @@
     &:focus {
       box-shadow: 0 0 0 2.5px rgba($denim, 0.5);
     }
+  }
+
+  input[type="checkbox"] + span {
+    margin-left: 12px;
   }
 }
 
@@ -259,8 +266,14 @@
   margin-right: 0;
 }
 
-.form-columns-1 .input .hs-input {
-  width: 100% !important;
+.form-columns-1 .input {
+  textarea.hs-input,
+  input[type="text"].hs-input,
+  input[type="email"].hs-input,
+  input[type="number"].hs-input,
+  input[type="tel"].hs-input  {
+    width: 100% !important;
+  }
 }
 
 @media screen and (max-width: 500px) {
